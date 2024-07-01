@@ -7,7 +7,8 @@ dest_dir = r"C:\Users\seera\OneDrive\Desktop\B2AI\data\filtered_data"
 
 # List of names to include (converted to lowercase for case-insensitive matching)
 NAMES_TO_INCLUDE = [
-    "fimo", "rp", "deep", "rmo", "ravid", "reg"
+    "fimo", "rp", "deep", "rmo", "ravid", "reg",
+    "2m", "2a",  "4m",  "4a",  "7m",  "7a"
 ]
 
 def should_copy_file(filename):
@@ -50,10 +51,11 @@ def copy_filtered_files(src, dst):
         if "OLDMETHOD" in path_parts:
             if "CONTROL" in path_parts:
                 if len(path_parts) > 2:  # Expecting CONTROLS/Control 4C, etc.
-                    print(path_parts, path_parts[3])
+                    # print(path_parts, path_parts[3])
                     dst_folder = os.path.join(dst, path_parts[3])
             else:
                 if len(path_parts) > 2:  # Expecting INTIAL/Patient1, REVISED/Patient1, etc.
+                    # print("else-->", path_parts, path_parts[2])
                     dst_folder = os.path.join(dst, path_parts[2])
         elif "UPDATEDMETHOD" in path_parts:
             if "CONTROLS" in path_parts:

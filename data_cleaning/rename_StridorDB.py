@@ -6,21 +6,21 @@ source_dir = r"C:\Users\seera\OneDrive\Desktop\B2AI\data\filtered_data"
 
 def get_breath_type(filename):
     filename_lower = filename.lower()
-    if any(term in filename_lower for term in ['regular breath', 'rmo', "reg"]):
+    if any(term in filename_lower for term in ['regular breath', 'rmo', 'reg', '2m', '2a']):
         return 'Reg'
-    elif 'fimo' in filename_lower:
+    elif any(term in filename_lower for term in ['fimo', '4m', '4a' ]):
         return 'FIMO'
     elif any(term in filename_lower for term in ['deep breath', 'deep']):
         return 'Deep'
-    elif any(term in filename_lower for term in ['rainbow passage', 'rp', 'ravid']):
+    elif any(term in filename_lower for term in ['rainbow passage', 'rp', 'ravid', '7m', '7a']):
         return 'RP'
     return ''
 
 def get_device_type(filename):
     filename_lower = filename.lower()
-    if any(term in filename_lower for term in ['avid', 'avid-flat', 'avid1in', 'avid2in', 'avidn']):
+    if any(term in filename_lower for term in ['avid', 'avid-flat', 'avid1in', 'avid2in', 'avidn', '2a', '4a', '7a']):
         return 'Avid'
-    elif any(term in filename_lower for term in ['12 inch', '12 inch-flat', '12in&3in', '12', '12inch', '12inch-flat']):
+    elif any(term in filename_lower for term in ['12 inch', '12 inch-flat', '12in&3in', '12', '12inch', '12inch-flat', '2m', '4m', '7m']):
         return '12inch'
     elif any(term in filename_lower for term in ['ipad', '6 inch']):
         return 'iPad'
