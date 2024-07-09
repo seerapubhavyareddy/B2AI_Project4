@@ -63,6 +63,7 @@ def process_directory(input_dir, output_dir):
             if file.endswith('.wav'):
                 input_path = os.path.join(root, file)
                 relative_path = os.path.relpath(input_path, input_dir)
+                # print(relative_path)
                 output_path = os.path.join(output_dir, relative_path)
                 
                 # Create the output directory if it doesn't exist
@@ -88,10 +89,11 @@ def process_directory(input_dir, output_dir):
 
 
 # Define input and output directories
-input_dir = r"C:\Users\seera\OneDrive\Desktop\B2AI\data\Filtered_StridorDB\Filtered_StridorDB"
+input_dir = r"C:\Users\seera\OneDrive\Desktop\B2AI\data\filtered_data"
+output_dir = r"C:\Users\seera\OneDrive\Desktop\B2AI\data\Silence_removal_b2aiDB\Filtered_StridorDB"
 # input_dir = r"C:\Users\seera\OneDrive\Desktop\B2AI\data\Filtered_b2aiDB\Filtered_b2aiDB"
 # output_dir = r"C:\Users\seera\OneDrive\Desktop\B2AI\data\Silence_removal_b2aiDB\Filtered_b2aiDB"
-output_dir = r"C:\Users\seera\OneDrive\Desktop\B2AI\data\Silence_removal_b2aiDB\Filtered_StridorDB"
+
 
 # Clean the output directory if it exists, or create it
 if os.path.exists(output_dir):
